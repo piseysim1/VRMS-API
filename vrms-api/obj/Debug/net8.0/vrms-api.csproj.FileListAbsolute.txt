@@ -1,0 +1,9 @@
+D:\Project\vrms-api\vrms-api\obj\Debug\net8.0\vrms-api.csproj.AssemblyReference.cache
+D:\Project\vrms-api\vrms-api\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Project\vrms-api\vrms-api\obj\Debug\net8.0\vrms-api.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\vrms-api\vrms-api\obj\Debug\net8.0\vrms-api.AssemblyInfoInputs.cache
+D:\Project\vrms-api\vrms-api\obj\Debug\net8.0\vrms-api.AssemblyInfo.cs
+D:\Project\vrms-api\vrms-api\obj\Debug\net8.0\vrms-api.csproj.CoreCompileInputs.cache
+D:\Project\vrms-api\vrms-api\obj\Debug\net8.0\vrms-api.MvcApplicationPartsAssemblyInfo.cs
+D:\Project\vrms-api\vrms-api\obj\Debug\net8.0\vrms-api.MvcApplicationPartsAssemblyInfo.cache
+D:\Project\vrms-api\vrms-api\obj\Debug\net8.0\EFCoreNpgsqlNodaTime.cs

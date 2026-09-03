@@ -1,0 +1,6 @@
+@vrms_api_HostAddress = http://localhost:5141
+
+GET {{vrms_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
