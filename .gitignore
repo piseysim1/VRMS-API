@@ -1,0 +1,32 @@
+# Ignore Visual Studio temporary files, build results, and cache
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+Debug/
+Release/
+
+# Visual Studio Code
+.vscode/
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Other common ignores
+*.dbmdl
+*.dbproj.schemaview
+*.jfm

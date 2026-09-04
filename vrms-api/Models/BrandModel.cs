@@ -2,9 +2,9 @@
 {
     public class BrandModel
     {
-        public String Code { get; set; }
-        public String Name { get; set; }
-        public String Note { get; set; }
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public string Note { get; set; }
     }
     public class BrandAddModel: BrandModel
     {
@@ -17,10 +17,6 @@
     public class BrandEditModel : BrandModel
     {
         public int Id { get; set; }
-    }
-    public class  BrandRemoveModel: BrandEditModel
-    {
-        
     }
     public class  BrandViewModel: BrandListModel
     {

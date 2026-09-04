@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using vrms_api.Helper;
+using static vrms_api.Domains.VrmsDomain;
 
 namespace vrms_api
 {
@@ -22,7 +23,11 @@ namespace vrms_api
                 entityType.SetTableName($"Vrms_{entityType.GetTableName()}");
             }
         }
-        
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<Model> Models { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<PaymentMethod> PaymentMethods { get; set; }
+
     }
     public static class DbContextSeedData
     {
