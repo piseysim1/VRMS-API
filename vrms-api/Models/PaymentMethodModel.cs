@@ -12,7 +12,7 @@
     public class PaymentMethodAddModel : PaymentMethodModel
     {
     }
-    public class PaymentMethodListModel : PaymentMethodAddModel
+    public class PaymentMethodListModel : PaymentMethodModel
     {
         public long Id { get; set; }
     }
@@ -20,7 +20,7 @@
     {
 
     }
-    public class PaymentMethodViewModel : PaymentMethodEditModel
+    public class PaymentMethodViewModel : PaymentMethodListModel
     {
 
     }

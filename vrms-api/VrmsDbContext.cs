@@ -26,6 +26,7 @@ namespace vrms_api
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Location> Locations { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<PaymentMethod> PaymentMethods { get; set; }
 
     }

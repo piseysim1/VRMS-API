@@ -23,6 +23,11 @@ namespace vrms_api.Configs
             CreateMap<Location, LocationEditModel>().ReverseMap();
             CreateMap<Location, LocationViewModel>().ReverseMap();
             CreateMap<Location, LocationListModel>().ReverseMap();
+
+            CreateMap<PaymentMethod, PaymentMethodAddModel>().ReverseMap();
+            CreateMap<PaymentMethod, PaymentMethodEditModel>().ReverseMap();
+            CreateMap<PaymentMethod, PaymentMethodViewModel>().ReverseMap();
+            CreateMap<PaymentMethod, PaymentMethodListModel>().ReverseMap();
         }
    
     }

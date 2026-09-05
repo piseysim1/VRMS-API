@@ -10,7 +10,7 @@
     public class ModelVehicleAddModel : ModelVehicleModel
     {
     }
-    public class ModelVehicleListModel : ModelVehicleAddModel
+    public class ModelVehicleListModel : ModelVehicleModel
     {
         public long Id { get; set; }
     }
@@ -18,7 +18,7 @@
     {
        
     }
-    public class ModelVehicleViewModel : ModelVehicleEditModel
+    public class ModelVehicleViewModel : ModelVehicleListModel
     {
         
     }

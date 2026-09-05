@@ -82,6 +82,12 @@
             public string ImageUrl { get; set; }
 
         }
+        public class AutoNumberModel : ShareDomain
+        {
+            public string Name { get; set; }
+            public string Format { get; set; }
+            public string Note { get; set; }
+        }
 
     }
 }

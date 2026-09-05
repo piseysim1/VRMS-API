@@ -12,13 +12,13 @@
     {
 
     }
-    public class LocationListModel : LocationAddModel
+    public class LocationListModel : LocationModel
     {
         public int Id { get; set; }
     }
-    public class LocationEditModel : LocationModel
+    public class LocationEditModel : LocationListModel
     {
-        public int Id { get; set; }
+       
     }
     public class LocationViewModel : LocationListModel
     {

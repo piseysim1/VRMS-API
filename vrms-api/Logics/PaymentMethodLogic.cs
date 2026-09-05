@@ -41,5 +41,30 @@ namespace vrms_api.Logics
             await _db.SaveChangesAsync();
             return await FindAsync(entity.Id);
         }
+        public async Task<PaymentMethodViewModel>EditPaymentMethodAsync(PaymentMethodEditModel model)
+        {
+            var entity = await _db.PaymentMethods.FirstOrDefaultAsync(x => x.Id == model.Id && x.Active);
+            if (entity == null)
+            {
+                throw new Exception("Payment Method not found");
+            }
+            _mapper.Map(model, entity);
+            entity.UpdatedAt = DateTime.Now;
+            await _db.SaveChangesAsync();
+            return await FindAsync(entity.Id);
+        }
+        public async Task<PaymentMethodViewModel> RemovePaymentMethodAsync(RemoveModel model)
+        {
+            var entity = await _db.PaymentMethods.FirstOrDefaultAsync(x => x.Id == model.Id && x.Active);
+            if (entity == null)
+            {
+                throw new Exception("Model not found");
+            }
+            entity.Active = false;
+            entity.UpdatedAt = DateTime.Now;
+            await _db.SaveChangesAsync();
+            return await FindAsync(entity.Id);
+        }
+
     }
 }

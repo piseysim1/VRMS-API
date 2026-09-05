@@ -10,13 +10,13 @@
     {
 
     }
-    public class BrandListModel : BrandAddModel
+    public class BrandListModel : BrandModel
     {
         public int Id { get; set; }
     }
-    public class BrandEditModel : BrandModel
+    public class BrandEditModel : BrandListModel
     {
-        public int Id { get; set; }
+      
     }
     public class  BrandViewModel: BrandListModel
     {
