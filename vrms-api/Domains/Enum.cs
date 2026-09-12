@@ -1,5 +1,13 @@
 ﻿namespace vrms_api.Domains
 {
+    public enum LookupTypes
+    {
+        BookingStatus = 1,
+        RateType = 2,
+        VehicleStatus = 3,
+        Color = 4,
+
+    }
     public enum Color
     {
         White = 180,
@@ -31,5 +39,16 @@
         SunsetOrange = 206,
         Burgundy = 207,
         Teal = 208
+    }
+    public enum VehicleStatus
+    {
+        Available = 1,
+        Unavailable = 2,
+        Rented = 3,
+    }
+    public enum RateType
+    {
+        Hour = 1,
+        Day = 2
     }
 }

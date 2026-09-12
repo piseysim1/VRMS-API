@@ -12,7 +12,7 @@
     }
     public class BrandListModel : BrandModel
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
     }
     public class BrandEditModel : BrandListModel
     {

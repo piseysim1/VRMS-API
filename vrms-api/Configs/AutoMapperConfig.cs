@@ -28,6 +28,19 @@ namespace vrms_api.Configs
             CreateMap<PaymentMethod, PaymentMethodEditModel>().ReverseMap();
             CreateMap<PaymentMethod, PaymentMethodViewModel>().ReverseMap();
             CreateMap<PaymentMethod, PaymentMethodListModel>().ReverseMap();
+
+
+            CreateMap<Rate, RateAddModel>().ReverseMap();
+            CreateMap<Rate, RateEditModel>().ReverseMap();
+            CreateMap<Rate, RateListModel>().ReverseMap();
+            CreateMap<Rate, RateViewModel>().ReverseMap();
+
+            CreateMap<Vehicle, VehicleAddModel>().ReverseMap();
+            CreateMap<Vehicle, VehicleEditModel>().ReverseMap();
+            CreateMap<Vehicle, VehicleListModel>().ReverseMap();
+            CreateMap<Vehicle, VehicleViewModel>().ReverseMap();
+
+
         }
    
     }

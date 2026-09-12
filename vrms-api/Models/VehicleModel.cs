@@ -15,6 +15,13 @@
     public class VehicleListModel : VehicleModel
     {
         public long Id { get; set; }
+        public string ModelName { get; set; }
+        public string BrandName { get; set; }
+        public long RateId { get; set; }
+        public string LocationName { get; set; }
+        public string StatusName { get; set; }
+        public string ColorName { get; set; }
+
     }
     public class VehicleEditModel : VehicleListModel
     {

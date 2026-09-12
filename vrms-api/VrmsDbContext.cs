@@ -23,11 +23,17 @@ namespace vrms_api
                 entityType.SetTableName($"Vrms_{entityType.GetTableName()}");
             }
         }
+        // Setting
+        public DbSet<LookUpType> LookUpTypes { get; set; }
+        public DbSet<LookUpItem> LookUpItems { get; set; }
+
+        // Core
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<PaymentMethod> PaymentMethods { get; set; }
+        public DbSet<Rate> Rates { get; set; }
 
     }
     public static class DbContextSeedData

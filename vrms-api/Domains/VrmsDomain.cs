@@ -60,8 +60,9 @@
             public long UnitPrice { get; set; }
             public long SubTotal { get; set; }
         }
-        public class  Rate: ShareDomain 
+        public class Rate : ShareDomain 
         {
+            public string Code { get; set; }
             public long ModelId { get; set; }
             public long RateTypeId { get; set; }
             public long Price { get; set; }

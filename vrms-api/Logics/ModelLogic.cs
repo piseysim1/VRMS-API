@@ -8,6 +8,7 @@ namespace vrms_api.Logics
 {
     public class ModelLogic(IServiceProvider provider) : ShareLogic(provider)
     {
+
         public async Task<ModelVehicleViewModel>FindAsync(long id)
         {
             var entity =  await _db.Models.FirstOrDefaultAsync(x => x.Id == id && x.Active);
