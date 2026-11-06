@@ -1,6 +1,10 @@
-call C:\Docker\gcp-server\connect.cmd
+call C:\Docker\vbsxr\vbsxr-cmd.cmd
 
-docker build .. --file ../vrms-api/Dockerfile -t %REGISTRY%/vrms-api
+docker build --no-cache ^
+  --network=host ^
+  -f ..\vrms-api\Dockerfile ^
+  -t %REGISTRY%/vrms-api:dev ^
+  ..\vrms-api
 
 docker push %REGISTRY%/vrms-api:dev
 PAUSE

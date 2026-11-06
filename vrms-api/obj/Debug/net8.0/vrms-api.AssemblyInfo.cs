@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("vrms-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c44ca3302c9819001b64275cd588682041139ea8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00385aa83afd56267af94088eb2f5ec09d618555")]
 [assembly: System.Reflection.AssemblyProductAttribute("vrms-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("vrms-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,11 +5,15 @@ using static vrms_api.Models.ShareModel;
 
 namespace vrms_api.Controllers
 {
-    public class PaymentMethodController(IServiceProvider provider):ShareController<PaymentMethodLogic>(provider)
+    public class PaymentMethodController(IServiceProvider provider) : ShareController<PaymentMethodLogic>(provider)
     {
         [HttpGet()]
         public async Task<SearchResult<PaymentMethodListModel, QueryParamModel>> SearchAsync(QueryParamModel param)
         {
+
+
+
+
             return await _logic.SearchAsync(param);
         }
         [HttpGet("id")]

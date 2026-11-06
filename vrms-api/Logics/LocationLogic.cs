@@ -37,7 +37,7 @@ namespace vrms_api.Logics
         public async Task<LocationViewModel>AddLocationAsync(LocationAddModel model)
         {
             var entity = _mapper.Map<Location>(model);
-            entity.UpdatedAt = DateTime.Now;    
+            entity.CreatedAt = DateTime.Now;    
             await _db.Locations.AddAsync(entity);
             await _db.SaveChangesAsync();
             return await FindAsync(entity.Id);

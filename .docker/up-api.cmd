@@ -1,4 +1,4 @@
-call C:\Docker\gcp-server\connect.cmd
+call C:\Docker\vbsxr\vbsxr-cmd.cmd
 
 docker pull %REGISTRY%/vrms-api
 

@@ -22,6 +22,204 @@ namespace vrms_api.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("vrms_api.Domains.SettingDomain+LookUpItem", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Color")
+                        .HasColumnType("text");
+
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("text");
+
+                    b.Property<long>("LookUpTypeId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("NameEn")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Ordering")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long?>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("vrms_LookUpItems");
+                });
+
+            modelBuilder.Entity("vrms_api.Domains.SettingDomain+LookUpType", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("boolean");
+
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("NameEn")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long?>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("vrms_LookUpTypes");
+                });
+
+            modelBuilder.Entity("vrms_api.Domains.VrmsDomain+Booking", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("BookingNo")
+                        .HasColumnType("text");
+
+                    b.Property<long>("BusinessSourceId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("IdentityCardUrl")
+                        .HasColumnType("text");
+
+                    b.Property<long?>("LocationId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("PaymentMethodId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("PaymentProofUrl")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long>("StatusId")
+                        .HasColumnType("bigint");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long?>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("VehicleDocumentUrl")
+                        .HasColumnType("text");
+
+                    b.Property<string>("VehicleRegistrationUrl")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("vrms_Bookings");
+                });
+
+            modelBuilder.Entity("vrms_api.Domains.VrmsDomain+BookingDetail", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("boolean");
+
+                    b.Property<long>("BookingId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<long>("Qty")
+                        .HasColumnType("bigint");
+
+                    b.Property<decimal>("SubTotal")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long?>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("VehicleId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookingId");
+
+                    b.ToTable("vrms_BookingDetails");
+                });
+
             modelBuilder.Entity("vrms_api.Domains.VrmsDomain+Brand", b =>
                 {
                     b.Property<long>("Id")
@@ -56,7 +254,7 @@ namespace vrms_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vrms_Brands");
+                    b.ToTable("vrms_Brands");
                 });
 
             modelBuilder.Entity("vrms_api.Domains.VrmsDomain+Location", b =>
@@ -96,10 +294,10 @@ namespace vrms_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vrms_Locations");
+                    b.ToTable("vrms_Locations");
                 });
 
-            modelBuilder.Entity("vrms_api.Domains.VrmsDomain+LookUpItem", b =>
+            modelBuilder.Entity("vrms_api.Domains.VrmsDomain+LoginSession", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -110,62 +308,31 @@ namespace vrms_api.Migrations
                     b.Property<bool>("Active")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("Browser")
+                        .HasColumnType("text");
+
                     b.Property<long>("CreateBy")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("ImageUrl")
+                    b.Property<string>("DeviceName")
                         .HasColumnType("text");
 
-                    b.Property<long>("LookUpTypeId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.Property<string>("NameEn")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Note")
-                        .HasColumnType("text");
-
-                    b.Property<long>("Ordering")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("ExpiresAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<long?>("UpdatedBy")
-                        .HasColumnType("bigint");
+                    b.Property<string>("IpAddress")
+                        .HasColumnType("text");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Vrms_LookUpItems");
-                });
-
-            modelBuilder.Entity("vrms_api.Domains.VrmsDomain+LookUpType", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
-
-                    b.Property<bool>("Active")
+                    b.Property<bool>("IsRevoked")
                         .HasColumnType("boolean");
 
-                    b.Property<long>("CreateBy")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("LogOutDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.Property<string>("NameEn")
+                    b.Property<string>("Token")
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -174,9 +341,12 @@ namespace vrms_api.Migrations
                     b.Property<long?>("UpdatedBy")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Vrms_LookUpTypes");
+                    b.ToTable("vrms_LoginSessions");
                 });
 
             modelBuilder.Entity("vrms_api.Domains.VrmsDomain+Model", b =>
@@ -213,7 +383,7 @@ namespace vrms_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vrms_Models");
+                    b.ToTable("vrms_Models");
                 });
 
             modelBuilder.Entity("vrms_api.Domains.VrmsDomain+PaymentMethod", b =>
@@ -259,7 +429,7 @@ namespace vrms_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vrms_PaymentMethods");
+                    b.ToTable("vrms_PaymentMethods");
                 });
 
             modelBuilder.Entity("vrms_api.Domains.VrmsDomain+Rate", b =>
@@ -285,8 +455,8 @@ namespace vrms_api.Migrations
                     b.Property<long>("ModelId")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("Price")
-                        .HasColumnType("bigint");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("numeric");
 
                     b.Property<long>("RateTypeId")
                         .HasColumnType("bigint");
@@ -299,7 +469,141 @@ namespace vrms_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vrms_Rates");
+                    b.ToTable("vrms_Rates");
+                });
+
+            modelBuilder.Entity("vrms_api.Domains.VrmsDomain+Role", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("boolean");
+
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long?>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("vrms_Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            Active = true,
+                            CreateBy = 0L,
+                            CreatedAt = new DateTime(2026, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Admin",
+                            Note = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            Active = true,
+                            CreateBy = 0L,
+                            CreatedAt = new DateTime(2026, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "User",
+                            Note = "Normal User"
+                        });
+                });
+
+            modelBuilder.Entity("vrms_api.Domains.VrmsDomain+User", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("boolean");
+
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Profile")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long?>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("vrms_Users");
+                });
+
+            modelBuilder.Entity("vrms_api.Domains.VrmsDomain+UserRole", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("boolean");
+
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long>("RoleId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long?>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("vrms_UserRoles");
                 });
 
             modelBuilder.Entity("vrms_api.Domains.VrmsDomain+Vehicle", b =>
@@ -325,6 +629,9 @@ namespace vrms_api.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("text");
+
                     b.Property<string>("LicensePlate")
                         .HasColumnType("text");
 
@@ -345,7 +652,23 @@ namespace vrms_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vrms_Vehicles");
+                    b.ToTable("vrms_Vehicles");
+                });
+
+            modelBuilder.Entity("vrms_api.Domains.VrmsDomain+BookingDetail", b =>
+                {
+                    b.HasOne("vrms_api.Domains.VrmsDomain+Booking", "Booking")
+                        .WithMany("BookingDetails")
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
+                });
+
+            modelBuilder.Entity("vrms_api.Domains.VrmsDomain+Booking", b =>
+                {
+                    b.Navigation("BookingDetails");
                 });
 #pragma warning restore 612, 618
         }

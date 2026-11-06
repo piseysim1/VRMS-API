@@ -1,12 +1,13 @@
-version: "3.2"
+version: '3.2'
 services:
   api-ctn:
-    image: "${REGISTRY}/vrms-api:dev"
+    image: '${REGISTRY}/vrms-api:dev'
     restart: always
     ports:
-      - 2504:80
+      - 3003:80
     environment:
       - ASPNETCORE_URLS=http://+:80
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Host=192.168.1.101;Port=5432;Username=vrms_admin;Password=dev2026;Database=vrms_db;
+      - ConnectionStrings__DefaultConnection=Host=192.168.1.101;Port=5432;Username=vbsxr_admin;Password=dev2026;Database=vrm_db;
       - CorsOrigins=http://localhost:4200;https://k1mhv9nn-4200.asse.devtunnels.ms
+      - Swagger__RoutePrefix=vrms

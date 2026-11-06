@@ -4,6 +4,18 @@ namespace vrms_api.Models
 {
     public class ShareModel
     {
+        public class ApiResponse<T>
+        {
+            [JsonProperty("message")]
+            public string Message { get; set; }
+            [JsonProperty("statusCode")]
+            public int StatusCode { get; set; }
+            [JsonProperty("type")]
+            public ResponseType ResponseType { get; set; } = ResponseType.Success;
+            [JsonProperty("result")]
+            public T Result { get; set; }
+        }
+
         public enum ResponseType { Error = 1, Success = 2 }
         public class RemoveModel
         {

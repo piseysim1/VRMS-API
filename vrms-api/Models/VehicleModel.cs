@@ -8,6 +8,7 @@
         public long LocationId { get; set; }
         public long ColorId { get; set; }
         public long StatusId { get; set; }
+        public string ImageUrl { get; set; }
     }
     public class VehicleAddModel : VehicleModel
     {
@@ -21,6 +22,14 @@
         public string LocationName { get; set; }
         public string StatusName { get; set; }
         public string ColorName { get; set; }
+       
+        public List<VehicleRateListModel> Rates { get; set; }
+    }
+    public class VehicleRateListModel
+    {
+        public long RateTypeId { get; set; }
+        public string RateTypeName { get; set; }
+        public long Price { get; set; }
 
     }
     public class VehicleEditModel : VehicleListModel

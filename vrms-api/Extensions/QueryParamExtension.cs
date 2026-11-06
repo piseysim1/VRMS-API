@@ -12,7 +12,7 @@ namespace vrms_api.Extensions
         {
             // revalidate all parameter setting.
             //filter.ValidateParam();
-
+            if (filter == null) return query;
             // filter 
             query = Filter(query, filter.Filters);
 
@@ -70,6 +70,10 @@ namespace vrms_api.Extensions
         }
         private static IQueryable<T> Filter<T>(IQueryable<T> queryable, List<Filter> filterParams)
         {
+            if (filterParams == null || !filterParams.Any())
+            {
+                return queryable;
+            }
             foreach (var filter in filterParams.Where(x => !x.Manual))
             {
                 {
@@ -136,5 +140,6 @@ namespace vrms_api.Extensions
             }
             return $"{filter.Field} {comparison} @{index}";
         }
+    
     }
 }

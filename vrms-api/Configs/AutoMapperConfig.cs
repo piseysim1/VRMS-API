@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using vrms_api.Models;
+using static vrms_api.Domains.SettingDomain;
 using static vrms_api.Domains.VrmsDomain;
 
 
@@ -40,7 +41,38 @@ namespace vrms_api.Configs
             CreateMap<Vehicle, VehicleListModel>().ReverseMap();
             CreateMap<Vehicle, VehicleViewModel>().ReverseMap();
 
+            CreateMap<User, RegisterModel>().ReverseMap();
 
+            CreateMap<User, UserAddModel>().ReverseMap();
+            CreateMap<User, UserEditModel>().ReverseMap();
+            CreateMap<User, UserListModel>().ReverseMap();
+            CreateMap<User, UserViewModel>().ReverseMap();
+
+            CreateMap<Role, RoleAddModel>().ReverseMap();
+            CreateMap<Role, RoleEditModel>().ReverseMap();
+            CreateMap<Role, RoleViewModel>().ReverseMap();
+            CreateMap<Role, RoleListModel>().ReverseMap();
+
+            CreateMap<Booking, BookingAddModel>().ReverseMap();
+            CreateMap<Booking, BookingEditModel>().ReverseMap();
+            CreateMap<Booking, BookingViewModel>().ReverseMap();
+            CreateMap<Booking, BookingListModel>().ReverseMap();
+
+            CreateMap<BookingDetail, BookingDetailListModel>().ReverseMap();
+            CreateMap<BookingDetail, BookingDetailEditModel>().ReverseMap();
+            CreateMap<BookingDetail, BookingDetailViewModel>().ReverseMap();
+            CreateMap<BookingDetail, BookingDetailAddModel>().ReverseMap();
+         
+
+            CreateMap<LookUpItem, LookUpItemAddModel>().ReverseMap();
+            CreateMap<LookUpItem, LookUpItemEditModel>().ReverseMap();
+            CreateMap<LookUpItem, LookUpItemViewModel>().ReverseMap();
+            CreateMap<LookUpItem, LookUpItemListModel>().ReverseMap();
+           
+            CreateMap<LookUpType, LookUpTypeListModel>().ReverseMap();
+            CreateMap<LookUpType, LookUpTypeAddModel>().ReverseMap();
+            CreateMap<LookUpType, LookUpTypeEditModel>().ReverseMap();
+            CreateMap<LookUpType, LookUpTypeViewModel>().ReverseMap();
         }
    
     }

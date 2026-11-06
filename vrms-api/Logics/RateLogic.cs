@@ -21,7 +21,7 @@ namespace vrms_api.Logics
 
             var q = from r in qRate
                     join m in _db.Models.Where(x => x.Active) on r.ModelId equals m.Id
-                    join lt in _db.LookUpItems.Where(x => x.Active && x.LookUpTypeId == (long)LookupTypes.RateType)
+                    join lt in _db.LookUpItems.Where(x => x.Active && x.LookUpTypeId == (long)LookUpTypes.RateType)
                     on r.RateTypeId equals lt.Id
                     select new RateListModel
                     {
@@ -30,8 +30,8 @@ namespace vrms_api.Logics
                         ModelId = r.ModelId,
                         RateTypeId = r.RateTypeId,
                         ModelName = m.Name,
-                        RateTypeName = lt.Name,
-                        RateTypeImage = lt.ImageUrl
+                        RateTypeName = lt.NameEn,
+                        Price= r.Price,
                     };
 
             await param.UpdateCountAsync(q);

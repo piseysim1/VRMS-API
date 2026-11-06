@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using vrms_api.Domains;
 using vrms_api.Helper;
+using static vrms_api.Domains.SettingDomain;
 using static vrms_api.Domains.VrmsDomain;
 
 namespace vrms_api
@@ -20,7 +22,7 @@ namespace vrms_api
             modelBuilder.InitSomeData(_configuration);
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
-                entityType.SetTableName($"Vrms_{entityType.GetTableName()}");
+                entityType.SetTableName($"vrms_{entityType.GetTableName()}");
             }
         }
         // Setting
@@ -34,14 +36,38 @@ namespace vrms_api
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<PaymentMethod> PaymentMethods { get; set; }
         public DbSet<Rate> Rates { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<LoginSession> LoginSessions { get; set; }
+
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<BookingDetail> BookingDetails { get; set; }
 
     }
     public static class DbContextSeedData
     {
-        static readonly DateTime DefaultRowDate = new DateTime(2026, 8, 25);
+        static readonly DateTime DefaultRowDate = new DateTime(2026, 10, 5);
         public static void InitSomeData(this ModelBuilder mb, IConfiguration configuration)
         {
-
+            mb.Entity<Role>().HasData(
+                new Role
+                {
+                    Id = (long)RoleEnum.Admin,
+                    Name = RoleNames.Admin,
+                    Note = "Administrator",
+                    Active = true,
+                    CreatedAt = DefaultRowDate
+                },
+                new Role
+                {
+                    Id = (long)RoleEnum.User,
+                    Name = RoleNames.User,
+                    Note = "Normal User",
+                    Active = true,
+                    CreatedAt = DefaultRowDate
+                }
+            );
         }
     }
 }

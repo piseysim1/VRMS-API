@@ -36,7 +36,7 @@ namespace vrms_api.Logics
         public async Task<PaymentMethodViewModel>AddPaymentMethodAsync(PaymentMethodAddModel model)     
         {
             var entity = _mapper.Map<PaymentMethod>(model);
-            entity.UpdatedAt = DateTime.Now;    
+            entity.CreatedAt = DateTime.Now;    
             await _db.PaymentMethods.AddAsync(entity);
             await _db.SaveChangesAsync();
             return await FindAsync(entity.Id);

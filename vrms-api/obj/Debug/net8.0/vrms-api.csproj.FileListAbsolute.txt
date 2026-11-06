@@ -133,3 +133,4 @@ D:\Project\VRMS Project\vrms-api\vrms-api\obj\Debug\net8.0\refint\vrms-api.dll
 D:\Project\VRMS Project\vrms-api\vrms-api\obj\Debug\net8.0\vrms-api.pdb
 D:\Project\VRMS Project\vrms-api\vrms-api\obj\Debug\net8.0\vrms-api.genruntimeconfig.cache
 D:\Project\VRMS Project\vrms-api\vrms-api\obj\Debug\net8.0\ref\vrms-api.dll
+D:\Project\VRMS Project\vrms-api\vrms-api\obj\Debug\net8.0\swae.build.ex.cache
